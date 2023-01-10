@@ -19,14 +19,26 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+
+/*
+
+    1. Add score functionalities.
+    2. Add level wise game with increasing deltax and deltay for more difficulties. and also we can increase
+       number of bricks for higher levels.
+    3. we can also add highscore feature.
+
+
+
+*/
+
 public class controller implements Initializable {
     @FXML
     private Circle circle;
     @FXML
     private AnchorPane scene;
 
-    double deltax = 0.5;
-    double deltay = 0.5;
+    double deltax = 1.0;
+    double deltay = 1.0;
 
     ArrayList<Rectangle> all_bricks = new ArrayList<>();
 
@@ -160,10 +172,10 @@ public class controller implements Initializable {
     public void create_bricks(){
 
         int counter = 1;
-        for (int i=255;i>0;i-=50){
-            for (int j=508;j>=0;j-=30){
+        for (int i=225;i>0;i-=50){
+            for (int j=488;j>=0;j-=30){
                 if (counter%2==1){
-                    Rectangle rect = new Rectangle(j,i,40,40);
+                    Rectangle rect = new Rectangle(j,i,30,30);
 
                     if (counter%3==0){
                         rect.setFill(Color.YELLOWGREEN);
